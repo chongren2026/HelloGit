@@ -11,6 +11,9 @@ class Paper:
     year: int
     abstract: str
     source_url: str | None = None
+    openalex_relevance_score: float | None = None
+    matched_terms: tuple[str, ...] = ()
+    inclusion_reason: str | None = None
 
 
 @dataclass(frozen=True)
@@ -29,3 +32,5 @@ class ResearchState:
     analyses: list[Analysis] = field(default_factory=list)
     review_markdown: str = ""
     report_path: Path | None = None
+    excel_path: Path | None = None
+    email_sent_to: str | None = None
